@@ -13,7 +13,6 @@ class MongoDAO {
             .catch(console.error);
 
         const flowerSchema = new mongoose.Schema({
-
             f_id : Number,
             name : String,
             category: String,
@@ -37,8 +36,7 @@ class MongoDAO {
     };
 
     getAllFlowers = (filter = {}) => {
-        const filter = {}; // Empty filter to retrieve all flowers
-      
+        // const filter = {}; // Empty filter to retrieve all flowers
         return this.FlowerModel.find(filter)
           .sort({ f_id: 1 }) // Sort by f_id in ascending order
           .exec()
