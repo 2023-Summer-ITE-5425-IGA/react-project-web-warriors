@@ -3,7 +3,9 @@ const dotenv = require('dotenv').config()
 const cors = require('cors')
 const MongoDAO = require("./dao/dao.js");
 const server_port = process.env.SERVER_PORT
+const connectDB = require('./config/db.js')
 
+connectDB();
 const app = express()
 const mongoDAOinstance = new MongoDAO();
 
