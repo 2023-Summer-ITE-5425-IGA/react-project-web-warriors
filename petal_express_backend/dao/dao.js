@@ -37,7 +37,6 @@ class MongoDAO {
 
     getAllFlowers = (filter = {}) => {
         // const filter = {}; // Empty filter to retrieve all flowers
-      
         return this.FlowerModel.find(filter)
           .sort({ f_id: 1 }) // Sort by f_id in ascending order
           .exec()

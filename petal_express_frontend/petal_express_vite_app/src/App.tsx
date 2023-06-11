@@ -10,7 +10,7 @@ function App() {
   const [flowers, setFlowers] = useState<FlowersProp>({ flowers: [] });
 
 useEffect(() => {
-  fetch("http://localhost:5000/allflowers").then(
+  fetch("http://localhost:5000/getAllFlowers").then(
     response => response.json()
   ).then(
     data => {
