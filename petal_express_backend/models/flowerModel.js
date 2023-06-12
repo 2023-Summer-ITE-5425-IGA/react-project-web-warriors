@@ -13,4 +13,4 @@ const flowerSchema = mongoose.Schema({
     collection: "flowers"
 })
 
-module.exports = mongoose.model('flowerModel', flowerSchema)
+module.exports = mongoose.model('flower', flowerSchema)
