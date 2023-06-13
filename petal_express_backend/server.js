@@ -18,4 +18,10 @@ app.use(cors());
 // api to display the routes for flowers
 app.use('/api/flowers', require('./routes/flowerRoutes.js'))
 
+// api to register a user
+app.use('/api/user', require('./routes/userRoute'));
+
+// apis - authenticate a user while login, get logged in user details
+app.use('/api/auth', require('./routes/authRoutes'));
+
 app.listen(server_port,()=>{console.log(`Server listening to port ${server_port}`)})
