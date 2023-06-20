@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import { SERVER_PORT } from "../config";
 
@@ -41,7 +42,24 @@ const Flowers = () => {
       {flowers && flowers.length === 0 ? (
         <p>Loading...</p>
       ) : (
-        flowers && flowers.map((flower) => <p key={flower.id}>{flower.name}</p>)
+        <ul className="flowers">
+          {
+            flowers && flowers.map((flower) =>
+              <li key={flower._id}>
+                <div className="flower">
+                  <Link to={'/flower/' + flower.f_id}>
+                    <img className="flower-image" src={"/images/flowers-1.jpg"} alt="flower" />
+                  </Link>
+                  <div className="flower-name">
+                    <Link to={'/flower/' + flower.f_id}>{flower.name}</Link>
+                  </div>
+                  <div className="flower-category">{flower.category}</div>
+                  <div className="flower-price">${flower.price}</div>
+                  <div className="flower-description">{flower.description} </div>
+                </div>
+              </li>)
+          }
+        </ul>
       )}
     </>
   );
